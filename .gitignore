@@ -1,0 +1,18 @@
+# Generated reports and charts
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.html
+
+# Local caches and temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Secrets and local environment files
+.env
+.env.*
+secrets.*
+credentials.*
