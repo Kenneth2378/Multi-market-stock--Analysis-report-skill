@@ -1,12 +1,13 @@
 # Multi-Market Stock Report Skill
 
-Generate stock analysis PDF reports for A-shares, B-shares, Hong Kong stocks, and US stocks with recent price action, fundamentals, valuation, technical analysis, news/sentiment, and inferred capital movement.
+Generate stock analysis PDF reports for A-shares, B-shares, Hong Kong stocks, and US stocks with recent price action, fundamentals, valuation, technical analysis, news/sentiment, inferred capital movement, and evidence-based investment judgment.
 
 ## Features
 
 - Resolve stock names, codes, markets, and trading currencies.
 - Gather recent market data and financial information.
 - Analyze fundamentals, valuation, technical structure, news, sentiment, and observable capital-flow signals.
+- Add an evidence-based investment judgment with methodology, scenarios, observation conditions, and invalidation conditions.
 - Generate Chinese PDF reports with charts.
 - Include data sources and risk disclaimers.
 - Support market-specific caveats for A股、B股、港股、美股.
@@ -16,25 +17,10 @@ Generate stock analysis PDF reports for A-shares, B-shares, Hong Kong stocks, an
 Copy this folder into your Codex skills directory:
 
 ```text
-~/.codex/skills/multi-market-stock-analysis-report-skill
+~/.codex/skills/a-share-stock-report
 ```
 
 Then restart Codex.
-
-Skill Name
-
-Use this name when calling the skill in Codex:
-
-a-share-stock-report
-
-Install From GitHub
-Repository: Kenneth2378/multi-market-stock-analysis-report-skill
-
-Skill path: .
-
-Then call it in Codex like this:
-
-用 a-share-stock-report skill 分析特斯拉
 
 ## Example Prompts
 
@@ -70,3 +56,4 @@ This skill may use public market and financial sources such as Eastmoney, StockA
 ## Disclaimer
 
 Reports generated with this skill are for research and learning only. They do not constitute investment advice or any recommendation to buy, sell, or hold securities.
+
