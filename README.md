@@ -1,6 +1,8 @@
 # Multi-Market Stock Report Skill
 
-Generate stock analysis PDF reports for A-shares, B-shares, Hong Kong stocks, and US stocks with recent price action, fundamentals, valuation, technical analysis, news/sentiment, inferred capital movement, and evidence-based investment judgment.
+一个用于生成 A股、B股、港股和美股股票研究 PDF 报告的 Codex Skill，覆盖基本面、估值、技术面、资金动向、消息情绪和投资判断框架。仅供研究参考，不构成投资建议。
+
+A Codex Skill for generating PDF stock research reports across A-shares, B-shares, Hong Kong stocks, and US stocks, covering fundamentals, valuation, technical analysis, capital-flow signals, news sentiment, and an investment judgment framework. For research reference only. Not investment advice.
 
 ## Features
 
