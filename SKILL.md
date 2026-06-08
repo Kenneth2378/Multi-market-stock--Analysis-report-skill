@@ -1,4 +1,4 @@
-﻿---
+---
 name: a-share-stock-report
 description: Generate stock analysis reports as PDFs for A-shares, B-shares, Hong Kong stocks, and US stocks, especially when the user asks to include recent three-month price action, valuation, fundamentals, news/sentiment, and inferred capital movements.
 metadata:
@@ -70,7 +70,24 @@ https://push2.eastmoney.com/api/qt/ulist.np/get?secids=<SECID1>,<SECID2>&fields=
      - Shrinking volume near support: possible stabilization, but require follow-up confirmation.
    - For US stocks, include institution/large-cap context where useful: index weight, institutional ownership, short interest trend, options/event volatility, and major earnings/news catalysts.
 
-5. Report structure
+5. Form the investment judgment
+   - Add an `投资判断与方法论` section to every report. This section is a research conclusion, not a buy/sell command.
+   - The judgment must be evidence-based and explain the reasoning chain. Avoid vague labels such as `看好` or `谨慎` without support.
+   - Use this decision framework:
+     - Fundamental direction: revenue/profit trend, margin trend, cash-flow quality, balance-sheet risk, governance quality.
+     - Valuation position: PE/PB/PS/EV metrics where available, historical range, peer comparison, and whether growth can justify valuation.
+     - Price/volume confirmation: trend, support/resistance, volume behavior, high-volume up/down days, and whether price confirms the fundamental story.
+     - Catalyst and sentiment: earnings, policy, product cycle, industry theme, analyst/institution view, and crowd sentiment.
+     - Risk-reward: upside scenario, base scenario, downside scenario, and the trigger that would invalidate the judgment.
+   - Use a clear conclusion format:
+     - `综合判断`: e.g. `偏积极但需等待确认`, `中性观察`, `谨慎回避`, `高波动成长跟踪`.
+     - `适合的投资者`: e.g. growth, value, dividend, event-driven, short-term trader, long-term holder.
+     - `观察条件`: what must happen before the view improves.
+     - `失效条件`: what would make the view wrong.
+     - `方法论说明`: summarize which signals carried the most weight and why.
+   - If the user asks for buy/sell zones, phrase them as research reference zones with risk controls, not as direct orders. Always keep the disclaimer.
+
+6. Report structure
    - Follow this Chinese outline unless the user asks otherwise:
      - `一、核心结论`
      - `二、基本面分析（6项）`
@@ -93,10 +110,16 @@ https://push2.eastmoney.com/api/qt/ulist.np/get?secids=<SECID1>,<SECID2>&fields=
        - institution view if available
        - crowd/social sentiment
        - sudden risk warnings
-     - `六、风险提示与跟踪要点`
+     - `六、投资判断与方法论`
+       - comprehensive judgment
+       - evidence chain
+       - suitable investor profile
+       - upside/base/downside scenarios
+       - observation and invalidation conditions
+     - `七、风险提示与跟踪要点`
      - `主要数据来源`
 
-6. Chart and PDF output
+7. Chart and PDF output
    - Generate one recent-three-month price/volume chart per stock. A simple line chart for closing price plus volume bars is sufficient; label the latest data date.
    - Show the trading currency on the chart/report: RMB, USD, or HKD.
    - Prefer a stable local pipeline:
@@ -112,7 +135,8 @@ Before final response:
 
 - Confirm all requested PDFs exist and have nonzero file sizes.
 - Check the report states the latest market data date.
-- Check each report has a chart, core conclusion, fundamentals, valuation, technical/main-capital or funds-flow section, news/sentiment section, risks, and data sources.
+- Check each report has a chart, core conclusion, fundamentals, valuation, technical/main-capital or funds-flow section, news/sentiment section, investment judgment/methodology section, risks, and data sources.
+- Check the investment judgment is supported by at least three concrete evidence points and includes observation conditions plus invalidation conditions.
 - Check each report states market, ticker, currency, latest trading date, and source limitations if any.
 - Check the report includes the Chinese disclaimer: `本文仅供研究参考，不构成投资建议，也不构成任何买入、卖出或持有建议。`
 - Check the report does not expose personal paths, account names, credentials, screenshots, or private files.
