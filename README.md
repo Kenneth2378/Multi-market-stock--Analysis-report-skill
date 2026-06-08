@@ -22,13 +22,18 @@ Copy this folder into your Codex skills directory:
 Then restart Codex.
 
 Skill Name
-Use this name when calling the skill in Codex:a-share-stock-report
+
+Use this name when calling the skill in Codex:
+
+a-share-stock-report
 
 Install From GitHub
 Repository: Kenneth2378/multi-market-stock-analysis-report-skill
 
-Skill path:
+Skill path: .
+
 Then call it in Codex like this:
+
 用 a-share-stock-report skill 分析特斯拉
 
 ## Example Prompts
